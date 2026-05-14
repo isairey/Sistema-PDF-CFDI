@@ -48,7 +48,7 @@ Si descubres una vulnerabilidad de seguridad, por favor repórtala de manera res
 ## 📩 Contacto de seguridad
 
 ```bash
-security@proyecto.com
+Developer.SR.IRP@gmail.com
 ```
 
 O mediante:
