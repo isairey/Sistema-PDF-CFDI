@@ -64,7 +64,7 @@ Asegúrate de tener instalado:
 Haz un fork del repositorio y clónalo localmente:
 
 ```bash
-git clone https://github.com/usuario/proyecto.git
+git clone https://github.com/isairey/Sistema-PDF-CFDI.git
 ```
 
 ---
