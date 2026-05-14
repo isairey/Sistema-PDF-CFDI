@@ -1,47 +1,209 @@
-# Código de Conducta del Contribuyente
+<div align="center">
 
-## Nuestro Compromiso
+<img width="180" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
 
-En el interés de fomentar un ambiente abierto y acogedor, nosotros como contribuyentes y mantenedores nos comprometemos a hacer de la participación en nuestro proyecto y nuestra comunidad una experiencia libre de acoso para todos, sin importar la edad, tamaño corporal, discapacidad, etnia, características sexuales, identidad y expresión de género, nivel de experiencia, educación, estatus socioeconómico, nacionalidad, apariencia personal, raza, religión, o identidad y orientación sexual.
+# 🤝 Código de Conducta
 
-## Nuestros Estándares
+### Comunidad y colaboración profesional para proyectos de software 🚀
 
-Ejemplos de comportamiento que contribuyen a crear un ambiente positivo incluyen:
+<p align="center">
+  Este proyecto y su comunidad están comprometidos con mantener un entorno abierto, respetuoso, inclusivo y libre de acoso para todas las personas participantes.
+</p>
 
-* Usar un lenguaje acogedor e inclusivo
-* Ser respetuoso de diferentes puntos de vista y experiencias
-* Aceptar graciosamente críticas constructivas
-* Enfocarse en lo que es mejor para la comunidad
-* Mostrar empatía hacia otros miembros de la comunidad
+<p align="center">
+  <img src="https://img.shields.io/badge/Comunidad-Inclusiva-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/OpenSource-Colaboración-success?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Respeto-Comunidad-orange?style=for-the-badge">
+</p>
 
-Ejemplos de comportamiento inaceptable por parte de los participantes incluyen:
+<p align="center">
+  <a href="#-nuestro-compromiso">Compromiso</a> •
+  <a href="#-nuestros-estándares">Estándares</a> •
+  <a href="#-responsabilidades">Responsabilidades</a> •
+  <a href="#-aplicación">Aplicación</a>
+</p>
 
-* El uso de lenguaje o imágenes sexualizadas y atención o avances sexuales no deseados
-* Comentarios despectivos, insultantes/derogatorios y ataques personales o políticos
-* Acoso público o privado
-* Publicar información privada de otros, como una dirección física o de correo electrónico, sin permiso explícito
-* Otra conducta que razonablemente podría considerarse inapropiada en un entorno profesional
+</div>
 
-## Nuestras Responsabilidades
+---
 
-Los mantenedores del proyecto son responsables de aclarar los estándares de comportamiento aceptable y se espera que tomen acciones correctivas apropiadas y justas en respuesta a cualquier instancia de comportamiento inaceptable.
+# 🌎 Nuestro compromiso
 
-Los mantenedores del proyecto tienen el derecho y la responsabilidad de remover, editar, o rechazar comentarios, commits, código, ediciones de wiki, issues, y otras contribuciones que no estén alineadas con este Código de Conducta, o de prohibir temporal o permanentemente a cualquier contribuyente por otros comportamientos que consideren inapropiados, amenazantes, ofensivos, o dañinos.
+En interés de fomentar una comunidad abierta y acogedora, los mantenedores y contribuyentes se comprometen a hacer de la participación en este proyecto una experiencia libre de acoso para todas las personas.
 
-## Alcance
+Esto aplica sin importar:
 
-Este Código de Conducta aplica tanto dentro de los espacios del proyecto como en espacios públicos cuando un individuo está representando el proyecto o su comunidad. Ejemplos de representar un proyecto o comunidad incluyen usar una dirección de correo electrónico oficial del proyecto, publicar a través de una cuenta oficial de redes sociales, o actuar como un representante designado en un evento en línea o fuera de línea. La representación de un proyecto puede ser definida y clarificada por los mantenedores del proyecto.
+- Edad
+- Identidad y expresión de género
+- Nivel de experiencia
+- Nacionalidad
+- Apariencia personal
+- Raza o etnia
+- Religión
+- Orientación sexual
+- Condición física o discapacidad
+- Situación económica o educativa
 
-## Aplicación
+Nuestro objetivo es construir una comunidad basada en:
 
-Instancias de comportamiento abusivo, acosador, o de otra manera inaceptable pueden ser reportadas contactando al equipo del proyecto en veronica-ec@googlegroups.com. Todas las quejas serán revisadas e investigadas y resultarán en una respuesta que se considere necesaria y apropiada a las circunstancias. El equipo del proyecto está obligado a mantener confidencialidad con respecto al reportero de un incidente. Detalles adicionales de políticas de aplicación específicas pueden ser publicadas por separado.
+- 🤝 Respeto
+- 💬 Comunicación sana
+- 🌱 Aprendizaje colaborativo
+- 🚀 Crecimiento profesional
+- ❤️ Inclusión y empatía
 
-Mantenedores del proyecto que no sigan o apliquen el Código de Conducta de buena fe pueden enfrentar repercusiones temporales o permanentes según lo determinen otros miembros del liderazgo del proyecto.
+---
 
-## Atribución
+# ✨ Nuestros estándares
 
-Este Código de Conducta es una adaptación del [Contributor Covenant][homepage], versión 1.4, disponible en https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
+## ✅ Comportamientos positivos
 
-[homepage]: https://www.contributor-covenant.org
+Ejemplos de comportamientos que ayudan a construir una comunidad saludable:
 
-Para respuestas a preguntas comunes sobre este código de conducta, ver https://www.contributor-covenant.org/faq 
+- 🗣️ Usar lenguaje inclusivo y respetuoso
+- 🤝 Respetar diferentes puntos de vista
+- 📚 Aceptar críticas constructivas
+- 🌎 Pensar en el bienestar de la comunidad
+- ❤️ Mostrar empatía y apoyo
+- 🚀 Ayudar a otros miembros a crecer
+
+---
+
+## ❌ Comportamientos inaceptables
+
+Los siguientes comportamientos no serán tolerados:
+
+- 🚫 Lenguaje ofensivo o discriminatorio
+- 🚫 Acoso público o privado
+- 🚫 Comentarios insultantes o degradantes
+- 🚫 Ataques personales o políticos
+- 🚫 Publicar información privada sin permiso
+- 🚫 Conductas intimidatorias o amenazantes
+- 🚫 Contenido sexual inapropiado
+- 🚫 Cualquier conducta considerada no profesional
+
+---
+
+# 🛡️ Responsabilidades
+
+## 👨‍💻 Equipo mantenedor
+
+Los mantenedores del proyecto son responsables de:
+
+- 📋 Definir estándares de convivencia
+- ⚖️ Aplicar reglas de forma justa
+- 🔒 Mantener un entorno seguro
+- 🚫 Moderar contenido inapropiado
+- 🤝 Promover una comunidad sana
+
+Los mantenedores tienen el derecho de:
+
+- Eliminar comentarios ofensivos
+- Rechazar contribuciones inapropiadas
+- Suspender temporalmente usuarios
+- Bloquear permanentemente comportamientos dañinos
+
+---
+
+# 🌐 Alcance
+
+Este Código de Conducta aplica en:
+
+- 💻 Repositorios y código fuente
+- 🐛 Issues y Pull Requests
+- 💬 Chats y foros
+- 📱 Redes sociales oficiales
+- 🎤 Eventos relacionados con el proyecto
+- 🌍 Espacios públicos donde se represente al proyecto
+
+Se considera representación oficial del proyecto cuando una persona:
+
+- Usa cuentas oficiales
+- Utiliza correos institucionales
+- Participa como representante del proyecto
+- Actúa públicamente en nombre de la comunidad
+
+---
+
+# ⚖️ Aplicación
+
+## 📩 Reporte de incidentes
+
+Los casos de comportamiento abusivo o inapropiado pueden reportarse mediante:
+
+```bash
+Developer.SR.IRP@gmail.com
+```
+
+Todas las denuncias serán:
+
+- 🔍 Revisadas cuidadosamente
+- 🔒 Tratadas con confidencialidad
+- ⚖️ Investigadas de manera justa
+- 📋 Procesadas según la gravedad del caso
+
+---
+
+# 🚨 Consecuencias
+
+Los participantes que incumplan este Código de Conducta podrán enfrentar:
+
+- ⚠️ Advertencias
+- ⛔ Restricción temporal
+- 🚫 Expulsión permanente
+- 🔒 Bloqueo de participación
+
+Las medidas serán determinadas por el equipo responsable del proyecto.
+
+---
+
+# 📚 Atribución
+
+Este Código de Conducta está basado en:
+
+## 🤝 Contributor Covenant v1.4
+
+Disponible en:
+
+```bash
+https://www.contributor-covenant.org/version/1/4/code-of-conduct.html
+```
+
+---
+
+# ❓ Preguntas frecuentes
+
+Más información sobre el Código de Conducta:
+
+```bash
+https://www.contributor-covenant.org/faq
+```
+
+---
+
+# ❤️ Nuestra comunidad
+
+<div align="center">
+
+### Creemos en una comunidad tecnológica basada en respeto, inclusión y colaboración 🚀
+
+</div>
+
+---
+
+# 🌟 Gracias por contribuir
+
+Gracias por ayudar a construir una comunidad:
+
+- 🤝 Respetuosa
+- 🌎 Inclusiva
+- 💡 Innovadora
+- 🚀 Profesional
+
+---
+
+<div align="center">
+
+# 🤝 Juntos construimos mejores proyectos y mejores comunidades ❤️
+
+</div>
