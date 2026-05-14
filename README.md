@@ -164,7 +164,7 @@ El proyecto fue desarrollado para practicar:
 # 📂 Estructura del proyecto
 
 ```bash
-cfdi-pdf-system/
+Sistema-PDF-CFDI/
 │
 ├── src/
 │   ├── controllers/
@@ -202,7 +202,7 @@ cfdi-pdf-system/
 ## 1️⃣ Clonar repositorio
 
 ```bash
-git clone https://github.com/usuario/cfdi-pdf-system.git
+git clone https://github.com/isairey/Sistema-PDF-CFDI.git
 ```
 
 ---
@@ -210,7 +210,7 @@ git clone https://github.com/usuario/cfdi-pdf-system.git
 ## 2️⃣ Entrar al proyecto
 
 ```bash
-cd cfdi-pdf-system
+cd Sistema-PDF-CFDI
 ```
 
 ---
@@ -390,7 +390,7 @@ git push origin feature/nueva-funcionalidad
 
 <div align="center">
 
-## Sistema PDF CFDI SAT
+## Isai Reyes
 
 Desarrollado para automatización de comprobantes fiscales digitales y generación profesional de PDFs compatibles con CFDI 4.0.
 
