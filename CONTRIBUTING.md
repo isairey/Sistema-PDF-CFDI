@@ -1,300 +1,251 @@
-# 🤝 Guía de Contribución - F Sri
+<div align="center">
 
-¡Gracias por tu interés en contribuir a **F Sri**! Este documento te guiará a través del proceso de contribución.
+<img width="180" src="https://cdn-icons-png.flaticon.com/512/942/942748.png" />
 
-## 🌟 Cómo Contribuir
+# 🤝 Guía de Contribución
 
-F Sri es un proyecto de código abierto y valoramos todas las contribuciones de la comunidad.
+### Gracias por contribuir a este proyecto 🚀
 
-## 🌟 Formas de Contribuir
+<p align="center">
+  Toda contribución ayuda a mejorar el proyecto y fortalecer la comunidad open source.
+</p>
 
-- 🐛 **Reportar bugs** y problemas
-- 💡 **Sugerir nuevas funcionalidades**
-- 📝 **Mejorar la documentación**
-- 🔧 **Escribir código** y corregir bugs
-- 🧪 **Escribir tests** y mejorar la cobertura
-- 🌐 **Traducir** a otros idiomas
-- 📢 **Difundir** el proyecto
+<p align="center">
+  <img src="https://img.shields.io/badge/OpenSource-Contributions-success?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Community-Friendly-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/PullRequests-Welcome-orange?style=for-the-badge">
+</p>
 
-## 🚀 Configuración del Entorno de Desarrollo
+<p align="center">
+  <a href="#-formas-de-contribuir">Contribuir</a> •
+  <a href="#-flujo-de-trabajo">Workflow</a> •
+  <a href="#-estándares">Estándares</a> •
+  <a href="#-pull-requests">Pull Requests</a>
+</p>
 
-### Prerrequisitos
-
-- Node.js 18.x o 20.x
-- MongoDB 4.4+
-- Git
-
-### Configuración Inicial
-
-1. **Fork** el repositorio en GitHub
-2. **Clona** tu fork:
-   ```bash
-   git clone https://github.com/TU_USUARIO/f-sri.git
-   cd f-sri
-   ```
-3. **Agrega el repositorio original** como upstream:
-   ```bash
-   git remote add upstream https://github.com/f-sri/f-sri.git
-   ```
-4. **Instala las dependencias**:
-   ```bash
-   npm install
-   ```
-5. **Copia el archivo de configuración**:
-   ```bash
-   cp .env.example .env
-   ```
-6. **Ejecuta los tests** para verificar que todo funciona:
-   ```bash
-   npm test
-   ```
-
-## 📋 Proceso de Contribución
-
-### 1. Antes de Empezar
-
-- 🔍 **Revisa** los [issues existentes](https://github.com/f-sri/f-sri/issues)
-- 💬 **Comenta** en el issue si planeas trabajar en él
-- 🆕 **Crea un nuevo issue** si no existe uno relacionado
-
-### 2. Desarrollo
-
-1. **Crea una rama** para tu feature:
-   ```bash
-   git checkout -b feature/nombre-descriptivo
-   ```
-
-2. **Desarrolla** tu funcionalidad siguiendo las convenciones del proyecto
-
-3. **Escribe tests** para tu código:
-   ```bash
-   npm test
-   ```
-
-4. **Verifica** que el código pase todas las validaciones:
-   ```bash
-   npm run validate
-   ```
-
-### 3. Commits
-
-Usamos **commits semánticos**. El formato es:
-
-```
-tipo(scope): descripción corta
-
-Descripción más detallada si es necesaria.
-
-Fixes #123
-```
-
-#### Tipos de Commit
-
-- `feat`: Nueva funcionalidad
-- `fix`: Corrección de bug
-- `docs`: Cambios en documentación
-- `style`: Cambios de formato (no afectan funcionalidad)
-- `refactor`: Refactorización de código
-- `test`: Agregar o modificar tests
-- `chore`: Tareas de mantenimiento
-
-#### Ejemplos
-
-```bash
-git commit -m "feat(invoice): agregar validación de RUC"
-git commit -m "fix(cors): corregir configuración para producción"
-git commit -m "docs(readme): actualizar instrucciones de instalación"
-```
-
-### 4. Pull Request
-
-1. **Actualiza** tu rama con los últimos cambios:
-   ```bash
-   git fetch upstream
-   git rebase upstream/main
-   ```
-
-2. **Push** a tu fork:
-   ```bash
-   git push origin feature/nombre-descriptivo
-   ```
-
-3. **Crea** un Pull Request desde GitHub
-
-4. **Completa** la plantilla del PR con:
-   - Descripción clara de los cambios
-   - Referencias a issues relacionados
-   - Screenshots si aplica
-   - Checklist de verificación
-
-## 🎯 Estándares de Código
-
-### TypeScript
-
-- Usa **TypeScript estricto**
-- Define **interfaces** para todos los tipos
-- Evita `any`, usa tipos específicos
-- Documenta funciones complejas con JSDoc
-
-### Estilo de Código
-
-- Usamos **Prettier** para formateo automático
-- Ejecuta `npm run lint:fix` antes de commit
-- Máximo 100 caracteres por línea
-- Usa nombres descriptivos para variables y funciones
-
-### Estructura de Archivos
-
-```
-src/
-├── config/          # Configuraciones
-├── interfaces/      # Tipos e interfaces TypeScript
-├── middleware/      # Middleware de Express
-├── models/          # Modelos de MongoDB
-├── routes/          # Rutas de la API
-├── services/        # Lógica de negocio
-└── utils/           # Utilidades y helpers
-```
-
-### Tests
-
-- **Cobertura mínima**: 80%
-- Tests unitarios para servicios y utilidades
-- Tests de integración para endpoints
-- Usa **Jest** y **Supertest**
-- Mockea dependencias externas
-
-```bash
-# Ejecutar tests
-npm test
-
-# Tests con coverage
-npm run test:coverage
-
-# Tests en modo watch
-npm run test:watch
-```
-
-## 🐛 Reportar Bugs
-
-### Antes de Reportar
-
-1. **Busca** en issues existentes
-2. **Verifica** que uses la última versión
-3. **Reproduce** el bug en un entorno limpio
-
-### Información a Incluir
-
-- **Descripción clara** del problema
-- **Pasos para reproducir**
-- **Comportamiento esperado** vs **actual**
-- **Información del entorno**:
-  - OS y versión
-  - Node.js versión
-  - MongoDB versión
-  - Versión de F Sri
-
-### Plantilla de Bug Report
-
-```markdown
-## Descripción
-Descripción clara y concisa del bug.
-
-## Pasos para Reproducir
-1. Ir a '...'
-2. Hacer clic en '...'
-3. Ver error
-
-## Comportamiento Esperado
-Lo que esperabas que pasara.
-
-## Comportamiento Actual
-Lo que realmente pasó.
-
-## Entorno
-- OS: [ej. Ubuntu 20.04]
-- Node.js: [ej. 18.17.0]
-- MongoDB: [ej. 5.0.9]
-- F Sri: [ej. 1.0.0]
-
-## Información Adicional
-Screenshots, logs, etc.
-```
-
-## 💡 Sugerir Funcionalidades
-
-### Antes de Sugerir
-
-1. **Revisa** el roadmap en el README
-2. **Busca** en issues existentes
-3. **Considera** si encaja con la visión del proyecto
-
-### Plantilla de Feature Request
-
-```markdown
-## Resumen
-Descripción breve de la funcionalidad.
-
-## Problema que Resuelve
-¿Qué problema actual resuelve esta funcionalidad?
-
-## Solución Propuesta
-Descripción detallada de cómo funcionaría.
-
-## Alternativas Consideradas
-Otras formas de resolver el problema.
-
-## Información Adicional
-Mockups, ejemplos, referencias, etc.
-```
-
-## 📚 Documentación
-
-### Tipos de Documentación
-
-- **README**: Información general y quick start
-- **API Docs**: Documentación de endpoints (Swagger)
-- **Code Comments**: Comentarios en código complejo
-- **Wiki**: Guías detalladas y tutoriales
-
-### Estándares
-
-- Usa **español** para documentación dirigida a usuarios ecuatorianos
-- Usa **inglés** para comentarios en código
-- Incluye **ejemplos prácticos**
-- Mantén la documentación **actualizada**
-
-## 🏆 Reconocimiento
-
-### Contributors
-
-Todos los contribuidores aparecen en:
-- Lista de contributors en GitHub
-- Sección de agradecimientos en README
-- Release notes cuando aplique
-
-### Tipos de Contribución
-
-Reconocemos todas las formas de contribución:
-- 💻 Código
-- 📖 Documentación
-- 🐛 Bug reports
-- 💡 Ideas
-- 🌐 Traducción
-- 📢 Promoción
-
-## ❓ ¿Necesitas Ayuda?
-
-- 💬 **Discord**: [Únete a nuestra comunidad](https://discord.gg/veronica-ec)
-- 📧 **Email**: veronica-ec@googlegroups.com
-- 📖 **Wiki**: [Documentación completa](https://github.com/veronica-ec/veronica-ec/wiki)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/veronica-ec/veronica-ec/issues)
-
-## 📜 Código de Conducta
-
-Este proyecto sigue el [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). 
-Al participar, te comprometes a mantener un ambiente respetuoso y acogedor para todos.
+</div>
 
 ---
 
-¡Gracias por contribuir a F Sri! 🇪🇨❤️ 
+# 🌎 Formas de contribuir
+
+Puedes ayudar al proyecto de muchas maneras:
+
+- 🐛 Reportando errores
+- 💡 Sugiriendo nuevas funcionalidades
+- 📝 Mejorando documentación
+- 🎨 Mejorando la interfaz
+- ⚡ Optimizando rendimiento
+- 🔒 Mejorando seguridad
+- 🧪 Agregando pruebas
+- 🚀 Proponiendo nuevas ideas
+
+Toda ayuda es bienvenida ❤️
+
+---
+
+# ⚡ Antes de comenzar
+
+## 📋 Requisitos
+
+Asegúrate de tener instalado:
+
+- Git
+- Node.js / Python / Java *(según el proyecto)*
+- Docker *(opcional)*
+- Un editor de código como VS Code
+
+---
+
+# 🍴 Flujo de trabajo
+
+## 1️⃣ Fork del proyecto
+
+Haz un fork del repositorio y clónalo localmente:
+
+```bash
+git clone https://github.com/usuario/proyecto.git
+```
+
+---
+
+## 2️⃣ Crear una rama
+
+Crea una nueva rama para tu contribución:
+
+```bash
+git checkout -b feature/nueva-funcionalidad
+```
+
+Ejemplos:
+
+```bash
+feature/login
+bugfix/error-api
+docs/update-readme
+```
+
+---
+
+## 3️⃣ Realizar cambios
+
+Trabaja en tu mejora manteniendo el código limpio y organizado.
+
+---
+
+## 4️⃣ Commit de cambios
+
+Usa mensajes claros y descriptivos:
+
+```bash
+git commit -m "✨ Agrega sistema de autenticación"
+```
+
+Ejemplos recomendados:
+
+```bash
+✨ Nueva funcionalidad
+🐛 Corrección de errores
+📝 Actualización de documentación
+⚡ Optimización de rendimiento
+🎨 Mejoras visuales
+🔒 Mejoras de seguridad
+```
+
+---
+
+## 5️⃣ Subir cambios
+
+```bash
+git push origin feature/nueva-funcionalidad
+```
+
+---
+
+## 6️⃣ Crear Pull Request
+
+Abre un Pull Request describiendo:
+
+- ✅ Qué cambios realizaste
+- 🚀 Qué problema resuelve
+- 📸 Capturas si aplica
+- 🧪 Cómo probarlo
+
+---
+
+# 🧹 Estándares del proyecto
+
+## 💻 Código limpio
+
+Por favor sigue estas recomendaciones:
+
+- 📦 Mantener buena estructura
+- 📝 Código legible
+- 🧪 Evitar código innecesario
+- 🔒 No subir secretos o credenciales
+- ⚡ Optimizar rendimiento cuando sea posible
+
+---
+
+## 📝 Convenciones
+
+- Usar nombres descriptivos
+- Mantener consistencia
+- Documentar funciones importantes
+- Seguir el estilo del proyecto
+
+---
+
+# 🧪 Testing
+
+Antes de enviar cambios:
+
+```bash
+npm test
+```
+
+o
+
+```bash
+pytest
+```
+
+o
+
+```bash
+mvn test
+```
+
+*(dependiendo de la tecnología del proyecto)*
+
+---
+
+# 🐛 Reportar errores
+
+## 📋 Al crear un Issue incluye:
+
+- Descripción clara del problema
+- Pasos para reproducir
+- Resultado esperado
+- Capturas de pantalla
+- Sistema operativo y entorno
+
+---
+
+# 💡 Sugerir funcionalidades
+
+Las nuevas ideas son bienvenidas 🚀
+
+Incluye:
+
+- Problema que resuelve
+- Beneficios
+- Ejemplo de uso
+- Posible implementación
+
+---
+
+# 🔒 Seguridad
+
+Si encuentras una vulnerabilidad:
+
+- ❌ No publiques información sensible
+- 📩 Contacta primero a los mantenedores
+- 🔒 Permite tiempo para solucionar el problema
+
+---
+
+# ❤️ Código de conducta
+
+Al participar en este proyecto aceptas seguir nuestro:
+
+## 🤝 Código de Conducta
+
+Por favor mantén:
+
+- Respeto
+- Empatía
+- Inclusión
+- Profesionalismo
+
+---
+
+# 🌟 Reconocimiento
+
+Todas las contribuciones serán reconocidas y apreciadas ❤️
+
+Gracias por dedicar tiempo para mejorar este proyecto y ayudar a la comunidad.
+
+---
+
+# 📜 Licencia
+
+Al contribuir aceptas que tus contribuciones serán parte del proyecto bajo la misma licencia del repositorio.
+
+---
+
+<div align="center">
+
+# 🚀 Gracias por contribuir y ser parte de la comunidad ❤️
+
+</div>
