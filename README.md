@@ -1,296 +1,419 @@
-# 🧾 Sistema de Facturación Electrónica
+<div align="center">
 
-[![CI/CD Pipeline](https://github.com/XaviMontero/f-sri/actions/workflows/ci.yml/badge.svg)](https://github.com/XaviMontero/f-sri/actions/workflows/ci.yml)
-[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/XaviMontero/f-sri/actions)
-[![Coverage](https://img.shields.io/badge/coverage-35%25-yellow.svg)](https://github.com/XaviMontero/f-sri)
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)](https://www.typescriptlang.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-6.0+-green.svg)](https://www.mongodb.com/)
-[![Express](https://img.shields.io/badge/Express-4.18+-lightgrey.svg)](https://expressjs.com/)
-[![Version](https://img.shields.io/github/v/release/XaviMontero/f-sri.svg)](https://github.com/XaviMontero/f-sri/releases)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![Ecuador SRI](https://img.shields.io/badge/Ecuador-SRI%20Compatible-success.svg)](https://www.sri.gob.ec/)
+<img width="220" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
 
+# 🇲🇽 Sistema PDF CFDI SAT
 
-**Sistema de Facturación Electrónica** es un sistema libre y de código abierto diseñado específicamente para Ecuador, con integración completa al SRI (Servicio de Rentas Internas).
+### Generación automática de PDFs para facturas electrónicas CFDI 4.0 🚀
 
-## 🚀 Características Principales
+<p align="center">
+  <b>Sistema PDF CFDI SAT</b> es una solución moderna para generar automáticamente PDFs de comprobantes fiscales digitales compatibles con el SAT de México y el estándar CFDI 4.0.
+</p>
 
-- ✅ **Facturación Electrónica Completa** - Generación, firma y envío al SRI
-- 🔐 **Sistema de Registro Seguro** - Control multi-capa de acceso
-- 📱 **API RESTful Completa** - Documentación con Swagger/OpenAPI
-- 🏢 **Multi-empresa** - Gestión de múltiples empresas emisoras
-- 📄 **PDFs Automáticos** - Generación y almacenamiento en la nube (Cloudinary/Local)
-- 🔒 **Firma Digital** - Certificado digital en base64 (sin archivos locales)
-- 📧 **Notificaciones Email** - Envío automático de facturas
-- 🧪 **Testing Completo** - Suite de tests automatizados
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-Backend-339933?style=for-the-badge&logo=node.js&logoColor=white">
+  <img src="https://img.shields.io/badge/TypeScript-Programming-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+  <img src="https://img.shields.io/badge/CFDI-4.0-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/SAT-México-006847?style=for-the-badge">
+</p>
 
-## ✨ Flujo de Facturación Automático
+<p align="center">
+  <a href="#-acerca-del-proyecto">Acerca</a> •
+  <a href="#-características">Características</a> •
+  <a href="#-tecnologías-utilizadas">Tecnologías</a> •
+  <a href="#-instalación">Instalación</a> •
+  <a href="#-roadmap">Roadmap</a>
+</p>
 
-```mermaid
-graph LR
-    A[Crear Factura] --> B[Generar XML]
-    B --> C[Firmar Digitalmente]
-    C --> D[Enviar al SRI]
-    D --> E{Estado SRI}
-    E -->|RECIBIDA| F[Generar PDF Automáticamente]
-    E -->|DEVUELTA| G[Log de Errores]
-    F --> H[PDF Disponible para Descarga]
-```
-
-### 🔄 Proceso Detallado
-
-1. **📝 Creación**: Se envía la factura via `/api/v1/invoice/complete`
-2. **📄 XML**: Se genera el XML según normativa del SRI
-3. **🔐 Firma**: Se firma digitalmente con el certificado almacenado (base64)
-4. **📤 Envío**: Se envía al SRI (ambiente pruebas o producción)
-5. **✅ Confirmación**: Si SRI responde `"RECIBIDA"`, se ejecuta automáticamente:
-   - **📄 Generación de PDF** con formato oficial
-   - **☁️ Almacenamiento** en el proveedor configurado (Cloudinary por defecto)
-   - **📊 Log de éxito**: `✅ FACTURA RECIBIDA POR SRI - ID: [id], Clave: [clave], Secuencial: [seq]`
-6. **📥 Disponibilidad**: PDF disponible via API con URL pública del proveedor
-
-## 🛠️ Tecnologías
-
-- **Backend**: Node.js + TypeScript + Express
-- **Base de Datos**: MongoDB + Mongoose
-- **Autenticación**: JWT + bcrypt
-- **Documentación**: Swagger/OpenAPI 3.0
-- **Testing**: Jest + Supertest
-- **Firma Digital**: node-forge
-- **PDF**: Puppeteer
-- **Almacenamiento**: Cloudinary (por defecto) / Local
-
-## 📦 Instalación Rápida
-
-```bash
-# Clonar el repositorio
-git clone https://github.com/XaviMontero/f-sri.git
-cd sistema-facturacion-electronica
-
-# Instalar dependencias
-npm install
-
-# Configurar variables de entorno
-cp .env.example .env
-# Editar .env con tus configuraciones
-# Nota: Necesitarás una cuenta de Cloudinary (gratuita) para almacenar PDFs
-
-# Ejecutar en desarrollo
-npm run dev
-
-# Construir para producción
-npm run build
-npm start
-```
-
-## ⚙️ Configuración
-
-### Variables de Entorno Esenciales
-
-```env
-# Base de datos
-MONGODB_URI=mongodb://localhost:27017/f-sri
-
-# Seguridad
-JWT_SECRET=tu_clave_jwt_super_secreta_aqui
-ENCRYPTION_KEY=clave_encriptacion_32_caracteres!!
-MASTER_REGISTRATION_KEY=clave_maestra_super_secreta
-
-# Servidor
-PORT=3000
-NODE_ENV=development
-
-# SRI Ecuador - URLs de servicios web
-SRI_ENVIRONMENT=1  # 1=Pruebas, 2=Producción
-SRI_RECEPCION_URL_PRUEBAS=https://celcer.sri.gob.ec/comprobantes-electronicos-ws/RecepcionComprobantesOffline?wsdl
-SRI_RECEPCION_URL_PRODUCCION=https://cel.sri.gob.ec/comprobantes-electronicos-ws/RecepcionComprobantesOffline?wsdl
-
-# Almacenamiento de PDFs (cloudinary o local)
-PDF_STORAGE_PROVIDER=cloudinary  # Por defecto: cloudinary
-
-# Cloudinary (para almacenar PDFs en la nube)
-CLOUDINARY_CLOUD_NAME=tu_cloud_name
-CLOUDINARY_API_KEY=tu_api_key
-CLOUDINARY_API_SECRET=tu_api_secret
-```
-
-### Primer Registro (Administrador)
-
-El certificado digital (archivo .p12) debe ser convertido a **base64** y enviado como una cadena de texto:
-
-```bash
-# Convertir certificado .p12 a base64 (Linux/Mac)
-base64 -i certificado.p12 -o certificado_base64.txt
-
-# O en PowerShell (Windows)
-[Convert]::ToBase64String([IO.File]::ReadAllBytes("certificado.p12"))
-```
-
-Luego, enviar el registro con el certificado en base64:
-
-```bash
-POST /register
-{
-  "email": "admin@miempresa.com",
-  "password": "password123",
-  "masterKey": "clave_maestra_super_secreta",
-  "ruc": "1234567890001",
-  "razon_social": "Mi Empresa S.A.",
-  "certificate": "MIIJqQIBAzCCCW8GCSqGSIb3DQEHAa...",  // Certificado .p12 en base64
-  "certificate_password": "password_del_certificado"
-}
-```
-
-## 🔒 Sistema de Seguridad
-
-El Sistema de Facturación Electrónica implementa un sistema de registro de múltiples capas:
-
-1. **Primer Registro**: Requiere `MASTER_REGISTRATION_KEY`
-2. **Registros Posteriores**: Códigos de invitación o RUCs en whitelist
-3. **Control Total**: Posibilidad de deshabilitar registros
-
-```env
-# Códigos de invitación
-INVITATION_CODES=INV2024001,INV2024002,DEMO2024
-
-# RUCs pre-aprobados
-ALLOWED_RUCS=1234567890001,0987654321001
-
-# Deshabilitar registro
-DISABLE_REGISTRATION=true
-```
-
-## 📚 Documentación API
-
-Una vez ejecutando el servidor, accede a:
-
-- **Swagger UI**: `http://localhost:3000/api-docs`
-- **API JSON**: `http://localhost:3000/api-docs.json`
-
-### Endpoints Principales
-
-```bash
-# Autenticación
-POST /register          # Registro de usuario y empresa
-POST /auth             # Autenticación
-GET  /status           # Estado del sistema
-
-# Facturación
-POST /api/v1/invoice/complete    # Crear y procesar factura
-GET  /api/v1/invoice            # Listar facturas
-
-# PDFs (Generación Automática)
-GET  /api/v1/invoice-pdf                    # Listar todos los PDFs
-GET  /api/v1/invoice-pdf/factura/{id}       # PDF por ID de factura
-GET  /api/v1/invoice-pdf/{id}/download      # Descargar PDF
-GET  /api/v1/invoice-pdf/clave/{claveAcceso} # PDF por clave de acceso
-POST /api/v1/invoice-pdf/regenerate/{id}    # Regenerar PDF
-
-# Gestión
-GET  /api/v1/issuing-company    # Empresas emisoras
-GET  /api/v1/client            # Clientes
-GET  /api/v1/product           # Productos
-```
-
-### 📄 Gestión de PDFs
-
-Los PDFs se generan **automáticamente** cuando el SRI confirma la recepción (`estado: "RECIBIDA"`) y se almacenan en el proveedor configurado (Cloudinary por defecto). No requiere intervención manual.
-
-```bash
-# Verificar si una factura tiene PDF generado
-curl -H "Authorization: Bearer $TOKEN" \
-  http://localhost:3000/api/v1/invoice-pdf/factura/64f8a1b2c3d4e5f6a7b8c9d2
-
-# Descargar PDF de factura
-curl -H "Authorization: Bearer $TOKEN" \
-  http://localhost:3000/api/v1/invoice-pdf/64f8a1b2c3d4e5f6a7b8c9d8/download \
-  -o factura.pdf
-```
-
-## 🧪 Testing
-
-```bash
-# Ejecutar todos los tests
-npm test
-
-# Tests en modo watch
-npm run test:watch
-
-# Coverage
-npm run test:coverage
-```
-
-## 🚀 Despliegue
-
-### Heroku
-
-```bash
-# Crear app
-heroku create tu-sistema-facturacion
-
-# Configurar variables
-heroku config:set MONGODB_URI=tu_mongodb_uri
-heroku config:set JWT_SECRET=tu_jwt_secret
-heroku config:set MASTER_REGISTRATION_KEY=tu_clave_maestra
-
-# Desplegar
-git push heroku main
-```
-
-### Docker
-
-```dockerfile
-FROM node:18-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci --only=production
-COPY dist ./dist
-EXPOSE 3000
-CMD ["npm", "start"]
-```
-
-## 🤝 Contribuir
-
-¡Las contribuciones son bienvenidas! Por favor lee [CONTRIBUTING.md](CONTRIBUTING.md) para detalles.
-
-### Proceso de Contribución
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📋 Roadmap
-
-- [ ] **v1.1**: Notas de crédito y débito
-- [ ] **v1.2**: Retenciones
-- [ ] **v1.3**: Guías de remisión
-- [ ] **v1.4**: Dashboard web
-- [ ] **v1.5**: App móvil
-- [ ] **v2.0**: Microservicios
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver [LICENSE](LICENSE) para más detalles.
-
-## 🆘 Soporte
-
-- 📖 **Documentación**: [Wiki del proyecto](https://github.com/XaviMontero/f-sri/wiki)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/XaviMontero/f-sri/issues)
-- 💬 **Discusiones**: [GitHub Discussions](https://github.com/XaviMontero/f-sri/discussions)
-- 📧 **Email**: soporte@f-sri.org
-
-## 🙏 Agradecimientos
-
-- [SRI Ecuador](https://www.sri.gob.ec/) por la documentación técnica
-- Comunidad de desarrolladores
-- Todos los [contribuidores](https://github.com/XaviMontero/f-sri/contributors)
+</div>
 
 ---
 
-**⭐ Si este Sistema de Facturación Electrónica te resulta útil, ¡dale una estrella en GitHub!**
+# 🌌 Acerca del proyecto
 
-Hecho con ❤️ para la comunidad ecuatoriana de desarrolladores.
+**Sistema PDF CFDI SAT** es una plataforma diseñada para generar automáticamente comprobantes fiscales digitales en formato PDF compatibles con el SAT de México y el estándar CFDI 4.0.
+
+El sistema automatiza la generación de PDFs cuando la factura es timbrada y autorizada correctamente.
+
+El sistema permite:
+
+- 📄 Generación automática de PDFs CFDI
+- 🧾 Facturación electrónica SAT
+- 📦 Gestión documental
+- 📊 Administración de comprobantes
+- 🔐 Seguridad y trazabilidad
+- 📧 Preparación para envío por email
+- 🏢 Gestión empresarial
+- ⚡ Descarga y regeneración de PDFs
+
+El proyecto fue desarrollado para practicar:
+
+- Generación dinámica de PDFs
+- Integración CFDI 4.0
+- Node.js y TypeScript
+- APIs REST
+- Automatización empresarial
+- Arquitectura backend moderna
+
+---
+
+# ✨ Características
+
+## 📄 Generación automática de PDF
+
+- ✅ Generación automática tras timbrado SAT
+- ✅ Formato profesional CFDI 4.0
+- ✅ PDFs listos para impresión
+- ✅ Conversión HTML → PDF con Puppeteer
+- ✅ Descarga inmediata
+
+---
+
+## 🧾 Gestión de comprobantes
+
+- 🏢 Facturación electrónica CFDI
+- 📄 Administración de documentos
+- 🔑 UUID fiscal SAT
+- 📦 Historial de PDFs
+- 🔄 Regeneración de PDFs
+
+---
+
+## 📧 Sistema de emails
+
+- 📩 Preparación para envío automático
+- 📎 Adjuntos PDF
+- 📨 Plantillas HTML
+- 🔁 Reintentos automáticos
+- 📊 Estado de envíos
+
+---
+
+## 🔒 Seguridad
+
+- 🔐 Autenticación API
+- 🛡️ Protección de endpoints
+- 📄 Validación documental
+- 👨‍💻 Gestión de accesos
+
+---
+
+## 📊 Administración
+
+- 📈 Dashboard administrativo
+- 📋 Gestión de estados
+- 📦 Metadatos PDF
+- 💾 Almacenamiento de buffers
+
+---
+
+# 🛠️ Tecnologías utilizadas
+
+## 🌐 Backend
+
+<p>
+  <img src="https://skillicons.dev/icons?i=nodejs,ts,express" />
+</p>
+
+- Node.js
+- TypeScript
+- Express
+- APIs REST
+
+---
+
+## 🗄️ Base de datos
+
+<p>
+  <img src="https://skillicons.dev/icons?i=postgresql,mysql" />
+</p>
+
+- PostgreSQL
+- MySQL
+- ORM
+- SQL
+
+---
+
+## 📄 PDF y automatización
+
+<p>
+  <img src="https://skillicons.dev/icons?i=html,css,js" />
+</p>
+
+- Puppeteer
+- HTML5
+- CSS3
+- Renderizado PDF
+
+---
+
+## 🐳 Herramientas
+
+<p>
+  <img src="https://skillicons.dev/icons?i=docker,git,github,npm" />
+</p>
+
+- Docker
+- Git
+- GitHub
+- NPM
+
+---
+
+# 📂 Estructura del proyecto
+
+```bash
+cfdi-pdf-system/
+│
+├── src/
+│   ├── controllers/
+│   ├── services/
+│   ├── models/
+│   ├── routes/
+│   ├── utils/
+│   └── templates/
+│
+├── uploads/
+│
+├── temp/
+│
+├── package.json
+│
+└── README.md
+```
+
+---
+
+# ⚡ Instalación
+
+## 📋 Requisitos
+
+- Node.js
+- NPM
+- PostgreSQL o MySQL
+- Puppeteer
+- Docker (opcional)
+
+---
+
+# 🚀 Configuración del proyecto
+
+## 1️⃣ Clonar repositorio
+
+```bash
+git clone https://github.com/usuario/cfdi-pdf-system.git
+```
+
+---
+
+## 2️⃣ Entrar al proyecto
+
+```bash
+cd cfdi-pdf-system
+```
+
+---
+
+## 3️⃣ Instalar dependencias
+
+```bash
+npm install
+```
+
+---
+
+## 4️⃣ Configurar variables de entorno
+
+```bash
+cp .env.example .env
+```
+
+---
+
+## 5️⃣ Ejecutar migraciones
+
+```bash
+npm run migrate
+```
+
+---
+
+## 6️⃣ Ejecutar servidor
+
+```bash
+npm run dev
+```
+
+---
+
+# 🌐 Endpoints API
+
+## 📄 Gestión de PDFs
+
+```bash
+GET    /api/v1/cfdi-pdf/
+GET    /api/v1/cfdi-pdf/invoice/:facturaId
+GET    /api/v1/cfdi-pdf/uuid/:uuid
+GET    /api/v1/cfdi-pdf/download/:uuid
+POST   /api/v1/cfdi-pdf/regenerate/:id
+```
+
+---
+
+## 📧 Gestión de emails
+
+```bash
+POST /api/v1/cfdi-pdf/send-email/:uuid
+GET  /api/v1/cfdi-pdf/email-status/:uuid
+POST /api/v1/cfdi-pdf/retry-email/:uuid
+```
+
+---
+
+# 🧾 Flujo del sistema
+
+## ⚡ Proceso automático
+
+1. 📄 Creación CFDI
+2. 🔐 Firma digital SAT
+3. 📡 Timbrado fiscal
+4. ✅ CFDI autorizado
+5. 📄 Generación automática PDF
+6. 💾 Almacenamiento en base de datos
+
+---
+
+# 📄 Formato del PDF
+
+## 📋 Información incluida
+
+- 🏢 Datos fiscales empresa
+- 🔑 UUID SAT
+- 📅 Fecha de timbrado
+- 👤 Información del receptor
+- 📦 Productos y conceptos
+- 💰 IVA e impuestos
+- 📧 Información adicional
+- 🧾 Datos fiscales CFDI 4.0
+
+---
+
+# 📧 Sistema de emails
+
+## 📨 Estados de envío
+
+- ⚪ NO_ENVIADO
+- 🟡 PENDIENTE
+- 🟢 ENVIADO
+- 🔴 ERROR
+
+---
+
+## ✉️ Funcionalidades
+
+- 📎 Adjuntar PDFs CFDI
+- 📨 Plantillas HTML responsivas
+- 🔁 Reintentos automáticos
+- 📊 Seguimiento de envíos
+
+---
+
+# 📸 Vista previa
+
+<div align="center">
+
+<img width="1000" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop" />
+
+</div>
+
+---
+
+# 🧠 Objetivos del proyecto
+
+## 🎯 Aprender y practicar
+
+- Node.js
+- TypeScript
+- Puppeteer
+- CFDI 4.0
+- APIs REST
+- Automatización PDF
+- Arquitectura backend
+- Integración SAT
+
+---
+
+# 🚧 Roadmap
+
+## 🔮 Próximas mejoras
+
+- ☁️ Integración con AWS S3
+- 📱 Dashboard responsive
+- 🤖 Automatización inteligente
+- 📊 Analytics avanzados
+- 📧 Sistema completo de emails
+- 🔔 Notificaciones automáticas
+- 📄 Plantillas personalizadas
+
+---
+
+# 🤝 Contribuciones
+
+Las contribuciones son bienvenidas ❤️
+
+## Cómo contribuir
+
+1. Fork del proyecto
+
+```bash
+git checkout -b feature/nueva-funcionalidad
+```
+
+2. Commit
+
+```bash
+git commit -m "✨ Nueva funcionalidad"
+```
+
+3. Push
+
+```bash
+git push origin feature/nueva-funcionalidad
+```
+
+4. Pull Request 🚀
+
+---
+
+# 👨‍💻 Autor
+
+<div align="center">
+
+## Sistema PDF CFDI SAT
+
+Desarrollado para automatización de comprobantes fiscales digitales y generación profesional de PDFs compatibles con CFDI 4.0.
+
+</div>
+
+---
+
+# 🌟 Apoya el proyecto
+
+⭐ Dale una estrella  
+🍴 Haz fork  
+📢 Comparte el proyecto
+
+---
+
+# 📜 Licencia
+
+Proyecto educativo y empresarial desarrollado para automatización de facturación electrónica CFDI 4.0 y generación de documentos fiscales digitales para México.
+
+---
+
+<div align="center">
+
+### 🇲🇽 Sistema PDF CFDI SAT — automatización inteligente de comprobantes electrónicos 🚀
+
+</div>
